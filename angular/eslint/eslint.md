@@ -11,7 +11,8 @@ prevent common coding issues and promotes a uniform codebase.
 If you don't have ESLint already installed (e.g. ESLint is included by default in all NX workspaces), you can install it
 in your Angular project by using the following command: `ng add @angular-eslint/schematics`.
 
-Once installed use our provided [.eslintrc.json](.eslintrc.json) file as the base ESLint configuration by placing it in
+Once installed use our provided [.eslintrc.json](standalone/.eslintrc.json) file as the base ESLint configuration by
+placing it in
 the root of your project folder.
 
 _Note that file we provide is in JSON format, if your project uses a `eslint.config.js` file, you can update your
