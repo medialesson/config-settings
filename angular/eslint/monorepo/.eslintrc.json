@@ -20,12 +20,7 @@
           }
         ],
         "eqeqeq": ["error", "smart"],
-        "no-console": [
-          "error",
-          {
-            "allow": ["warn", "error", "info"]
-          }
-        ],
+        "no-console": ["warn"],
         "spaced-comment": [
           "error",
           "always",
@@ -59,6 +54,22 @@
               "methods": "no-public",
               "properties": "no-public",
               "parameterProperties": "no-public"
+            }
+          }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": {
+              "memberTypes": [
+                "signature",
+                ["decorated-field", "decorated-get", "decorated-set", "get", "set"],
+                ["abstract-field", "static-field", "instance-field"],
+                "constructor",
+                "decorated-method",
+                ["abstract-method", "static-method", "instance-method"]
+              ],
+              "order": "as-written"
             }
           }
         ],
@@ -107,7 +118,6 @@
         "import/no-absolute-path": "error",
         "import/no-cycle": "error",
         "import/no-self-import": "error",
-        "import/no-unresolved": "error",
         "import/no-useless-path-segments": "error",
         "simple-import-sort/exports": "error",
         "simple-import-sort/imports": "error"
