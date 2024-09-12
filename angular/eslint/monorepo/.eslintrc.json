@@ -18,13 +18,111 @@
               }
             ]
           }
+        ],
+        "eqeqeq": ["error", "smart"],
+        "no-console": [
+          "error",
+          {
+            "allow": ["warn", "error", "info"]
+          }
+        ],
+        "spaced-comment": [
+          "error",
+          "always",
+          {
+            "markers": ["/"]
+          }
         ]
       }
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@nx/typescript"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": false
+          }
+        ],
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "explicit",
+            "overrides": {
+              "accessors": "no-public",
+              "constructors": "no-public",
+              "methods": "no-public",
+              "properties": "no-public",
+              "parameterProperties": "no-public"
+            }
+          }
+        ],
+        "@typescript-eslint/lines-around-comment": [
+          "error",
+          {
+            "allowArrayStart": true,
+            "allowBlockStart": true,
+            "allowClassStart": true,
+            "allowEnumStart": true,
+            "allowInterfaceStart": true,
+            "allowModuleStart": true,
+            "allowObjectStart": true,
+            "allowTypeStart": true,
+            "beforeBlockComment": true,
+            "beforeLineComment": false
+          }
+        ],
+        "@typescript-eslint/lines-between-class-members": [
+          "error",
+          "always",
+          {
+            "exceptAfterSingleLine": true
+          }
+        ],
+        "@typescript-eslint/no-empty-function": [
+          "error",
+          {
+            "allow": ["arrowFunctions"]
+          }
+        ],
+        "@typescript-eslint/no-inferrable-types": [
+          "warn",
+          {
+            "ignoreParameters": true
+          }
+        ],
+        "@typescript-eslint/no-invalid-this": "error",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_"
+          }
+        ],
+        "import/no-absolute-path": "error",
+        "import/no-cycle": "error",
+        "import/no-self-import": "error",
+        "import/no-unresolved": "error",
+        "import/no-useless-path-segments": "error",
+        "simple-import-sort/exports": "error",
+        "simple-import-sort/imports": "error"
+      },
+      "settings": {
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+          "typescript": {
+            "alwaysTryTypes": true,
+            "project": "./tsconfig.base.json"
+          }
+        }
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
