@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx", "import", "simple-import-sort"],
+  "plugins": ["@nx", "@stylistic", "import", "simple-import-sort"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -38,42 +38,48 @@
         "plugin:@nx/typescript"
       ],
       "rules": {
-        "@typescript-eslint/explicit-function-return-type": [
-          "error",
-          {
-            "allowExpressions": false
-          }
-        ],
+        "@typescript-eslint/explicit-function-return-type": "error",
         "@typescript-eslint/explicit-member-accessibility": [
           "error",
           {
-            "accessibility": "explicit",
-            "overrides": {
-              "accessors": "no-public",
-              "constructors": "no-public",
-              "methods": "no-public",
-              "properties": "no-public",
-              "parameterProperties": "no-public"
-            }
+            "accessibility": "no-public"
           }
         ],
         "@typescript-eslint/member-ordering": [
           "error",
           {
-            "default": {
-              "memberTypes": [
-                "signature",
-                ["decorated-field", "decorated-get", "decorated-set", "get", "set"],
-                ["abstract-field", "static-field", "instance-field"],
-                "constructor",
-                "decorated-method",
-                ["abstract-method", "static-method", "instance-method"]
-              ],
-              "order": "as-written"
-            }
+            "default": [
+              "signature",
+              ["decorated-field", "get", "set"],
+              "field",
+              "constructor",
+              "decorated-method",
+              "method"
+            ]
           }
         ],
-        "@typescript-eslint/lines-around-comment": [
+        "@typescript-eslint/no-empty-function": "error",
+        "@typescript-eslint/no-inferrable-types": [
+          "warn",
+          {
+            "ignoreParameters": true
+          }
+        ],
+        "@typescript-eslint/no-invalid-this": "error",
+        "@typescript-eslint/no-unused-expressions": [
+          "error",
+          {
+            "allowTernary": true
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_"
+          }
+        ],
+        "@stylistic/lines-around-comment": [
           "error",
           {
             "allowArrayStart": true,
@@ -83,36 +89,14 @@
             "allowInterfaceStart": true,
             "allowModuleStart": true,
             "allowObjectStart": true,
-            "allowTypeStart": true,
-            "beforeBlockComment": true,
-            "beforeLineComment": false
+            "allowTypeStart": true
           }
         ],
-        "@typescript-eslint/lines-between-class-members": [
+        "@stylistic/lines-between-class-members": [
           "error",
           "always",
           {
             "exceptAfterSingleLine": true
-          }
-        ],
-        "@typescript-eslint/no-empty-function": [
-          "error",
-          {
-            "allow": ["arrowFunctions"]
-          }
-        ],
-        "@typescript-eslint/no-inferrable-types": [
-          "warn",
-          {
-            "ignoreParameters": true
-          }
-        ],
-        "@typescript-eslint/no-invalid-this": "error",
-        "@typescript-eslint/no-unused-vars": [
-          "error",
-          {
-            "argsIgnorePattern": "^_",
-            "varsIgnorePattern": "^_"
           }
         ],
         "import/no-absolute-path": "error",
@@ -144,6 +128,11 @@
       "env": {
         "jest": true
       },
+      "rules": {}
+    },
+    {
+      "files": "*.json",
+      "parser": "jsonc-eslint-parser",
       "rules": {}
     }
   ]
