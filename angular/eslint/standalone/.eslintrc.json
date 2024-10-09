@@ -6,15 +6,35 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "eqeqeq": ["error", "smart"],
+        "no-console": ["warn"],
+        "@stylistic/lines-around-comment": [
+          "error",
+          {
+            "allowArrayStart": true,
+            "allowBlockStart": true,
+            "allowClassStart": true,
+            "allowEnumStart": true,
+            "allowInterfaceStart": true,
+            "allowModuleStart": true,
+            "allowObjectStart": true,
+            "allowTypeStart": true
+          }
+        ],
+        "@stylistic/lines-between-class-members": [
+          "error",
+          "always",
+          {
+            "exceptAfterSingleLine": true
+          }
+        ],
         "@stylistic/spaced-comment": [
           "error",
           "always",
           {
             "markers": ["/"]
           }
-        ],
-        "eqeqeq": ["error", "smart"],
-        "no-console": ["warn"]
+        ]
       }
     },
     {
@@ -60,26 +80,6 @@
           {
             "argsIgnorePattern": "^_",
             "varsIgnorePattern": "^_"
-          }
-        ],
-        "@stylistic/lines-around-comment": [
-          "error",
-          {
-            "allowArrayStart": true,
-            "allowBlockStart": true,
-            "allowClassStart": true,
-            "allowEnumStart": true,
-            "allowInterfaceStart": true,
-            "allowModuleStart": true,
-            "allowObjectStart": true,
-            "allowTypeStart": true
-          }
-        ],
-        "@stylistic/lines-between-class-members": [
-          "error",
-          "always",
-          {
-            "exceptAfterSingleLine": true
           }
         ],
         "import/no-absolute-path": "error",
