@@ -12,26 +12,22 @@ If you don't have ESLint already installed (e.g. ESLint is included by default i
 in your Angular project by using the following command: `ng add @angular-eslint/schematics`.
 
 Once installed use our provided [.eslintrc.json](standalone/.eslintrc.json) file as the base ESLint configuration by
-placing it in
-the root of your project folder.
+placing it in the root of your project folder.
 
 _Note that file we provide is in JSON format, if your project uses a `eslint.config.js` file, you can update your
 configuration to use a JSON file as input or copy the recommended rulesets listed below manually._
 
 ## Recommended rules
 
-The following recommended rules are enabled in our standard ESLint configuration:
-
-- [ESLint](https://eslint.org/docs/latest/rules/#suggestions)
-- [typescript-eslint](https://typescript-eslint.io/rules/)
-- [angular-eslint](https://github.com/angular-eslint/angular-eslint)
-- [@nx/eslint](https://nx.dev/nx-api/eslint#nxeslint-configuration)
+The default Nx configurations from `@nx/eslint-plugin` are extended in our standard ESLint configuration files. The Nx
+configurations already include the standard recommended rulesets from `eslint` and `@typescript-eslint`, so it's not
+necessary to extend these separately.
 
 ## Custom enabled rules
 
-In addition to the rule set listed above, the following custom rules are included in the ESLint configuration file.
+In addition to the standard rules, the following custom rules are defined:
 
-The autofix column indicates whether the rule can be automatically fixed by ESLint when running `eslint --fix`.
+_The autofix column indicates whether the rule can be automatically fixed by ESLint when running `eslint --fix`._
 
 ### JS and TS rules
 
@@ -74,6 +70,7 @@ The autofix column indicates whether the rule can be automatically fixed by ESLi
 ### NX specific rules
 
 In the case of NX workspaces, it is also recommended to enforce boundaries between the different modules (i.e. apps and
-libraries) inside the project. The configuration to achieve this, however, will greatly depend on how the project is
-structured, so we suggest reading the [NX documentation](https://nx.dev/features/enforce-module-boundaries) for more
-information.
+libraries) inside the project. By default, the rule `@nx/enforce-module-boundaries` is included in the ESLint
+configuration from new projects, but it does not define any constrains. These need to be manually specified with
+the help of the [NX documentation](https://nx.dev/features/enforce-module-boundaries) based on the project's
+architecture.
