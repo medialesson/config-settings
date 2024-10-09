@@ -19,24 +19,20 @@
             ]
           }
         ],
-        "eqeqeq": ["error", "smart"],
-        "no-console": ["warn"],
-        "spaced-comment": [
+        "@stylistic/spaced-comment": [
           "error",
           "always",
           {
             "markers": ["/"]
           }
-        ]
+        ],
+        "eqeqeq": ["error", "smart"],
+        "no-console": ["warn"]
       }
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@nx/typescript"
-      ],
+      "extends": ["plugin:@nx/typescript"],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "error",
         "@typescript-eslint/explicit-member-accessibility": [
