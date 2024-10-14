@@ -47,7 +47,9 @@
           {
             "markers": ["/"]
           }
-        ]
+        ],
+        "simple-import-sort/exports": "error",
+        "simple-import-sort/imports": "error"
       }
     },
     {
@@ -98,9 +100,7 @@
         "import/no-absolute-path": "error",
         "import/no-cycle": "error",
         "import/no-self-import": "error",
-        "import/no-useless-path-segments": "error",
-        "simple-import-sort/exports": "error",
-        "simple-import-sort/imports": "error"
+        "import/no-useless-path-segments": "error"
       },
       "settings": {
         "import/parsers": {
