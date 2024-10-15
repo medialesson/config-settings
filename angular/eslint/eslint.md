@@ -11,21 +11,29 @@ prevent common coding issues and promotes a uniform codebase.
 If you don't have ESLint already installed (e.g. ESLint is included by default in all NX workspaces), you can install it
 in your Angular project by using the following command: `ng add @angular-eslint/schematics`.
 
-Once installed use our provided [.eslintrc.json](standalone/.eslintrc.json) file as the base ESLint configuration by
-placing it in the root of your project folder.
+Once installed use one of our provided files as the base ESLint configuration by placing it in the root of your project
+folder, as well as in the application / library folders when working in a monorepo setup.
 
-_Note that file we provide is in JSON format, if your project uses a `eslint.config.js` file, you can update your
-configuration to use a JSON file as input or copy the recommended rulesets listed below manually._
+Note that two different formats are available:
+
+- _Flat_: Newer format defined as `eslint.config.js` files. It is the standard style when working with Nx version 20+
+  and ESLint 9+. It offers a streamlined configuration approach, making it easier to manage and understand.
+
+- _eslintrc_: Codebases working on older versions of Nx and ESLint, can instead rely on the legacy _eslintrc_ format,
+  specified in `.eslintrc.json`.
+
+Additionally, the repository includes separate ESLint configurations for projects following monorepo and standalone
+architectures.
 
 ## Recommended rules
 
-The default Nx configurations from `@nx/eslint-plugin` are extended in our standard ESLint configuration files. The Nx
-configurations already include the standard recommended rulesets from `eslint` and `@typescript-eslint`, so it's not
-necessary to extend these separately.
+The default Nx configurations from `@nx/eslint-plugin` are extended in all our standard ESLint configuration files.
+These duckdalready include the standard recommended rulesets from `eslint` and `@typescript-eslint`, so it is not
+necessary to extend these rulesets separately.
 
-## Custom enabled rules
+## Overrides
 
-In addition to the standard rules, the following custom rules are defined:
+In addition to the standard rules, the following overrides are defined:
 
 _The autofix column indicates whether the rule can be automatically fixed by ESLint when running `eslint --fix`._
 
@@ -69,8 +77,7 @@ _The autofix column indicates whether the rule can be automatically fixed by ESL
 
 ### NX specific rules
 
-In the case of NX workspaces, it is also recommended to enforce boundaries between the different modules (i.e. apps and
+In the case of Nx workspaces, it is also recommended to enforce boundaries between the different modules (i.e., apps and
 libraries) inside the project. By default, the rule `@nx/enforce-module-boundaries` is included in the ESLint
-configuration from new projects, but it does not define any constrains. These need to be manually specified with
-the help of the [NX documentation](https://nx.dev/features/enforce-module-boundaries) based on the project's
-architecture.
+configuration for new projects, but it does not define any constraints. These need to be manually specified with the
+help of the [NX documentation](https://nx.dev/features/enforce-module-boundaries) based on the project's architecture.
