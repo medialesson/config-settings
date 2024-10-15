@@ -76,14 +76,12 @@
             ]
           }
         ],
-        "@typescript-eslint/no-empty-function": "error",
         "@typescript-eslint/no-inferrable-types": [
           "warn",
           {
             "ignoreParameters": true
           }
         ],
-        "@typescript-eslint/no-invalid-this": "error",
         "@typescript-eslint/no-unused-expressions": [
           "error",
           {

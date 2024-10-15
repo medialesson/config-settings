@@ -1,26 +1,26 @@
-import nx from '@nx/eslint-plugin';
-import stylistic from '@stylistic/eslint-plugin';
-import eslintPluginImport from 'eslint-plugin-import';
-import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import nx from "@nx/eslint-plugin";
+import stylistic from "@stylistic/eslint-plugin";
+import eslintPluginImport from "eslint-plugin-import";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 
 export default [
-  ...nx.configs['flat/base'],
-  ...nx.configs['flat/typescript'],
-  ...nx.configs['flat/javascript'],
+  ...nx.configs["flat/base"],
+  ...nx.configs["flat/typescript"],
+  ...nx.configs["flat/javascript"],
   {
-    ignores: ['**/dist'],
+    ignores: ["**/dist"],
   },
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
     plugins: {
-      'simple-import-sort': simpleImportSort,
-      '@stylistic': stylistic,
+      "simple-import-sort": simpleImportSort,
+      "@stylistic": stylistic,
     },
     rules: {
-      eqeqeq: ['error', 'smart'],
-      'no-console': ['warn'],
-      '@stylistic/lines-around-comment': [
-        'error',
+      eqeqeq: ["error", "smart"],
+      "no-console": ["warn"],
+      "@stylistic/lines-around-comment": [
+        "error",
         {
           allowArrayStart: true,
           allowBlockStart: true,
@@ -32,119 +32,117 @@ export default [
           allowTypeStart: true,
         },
       ],
-      '@stylistic/lines-between-class-members': [
-        'error',
-        'always',
+      "@stylistic/lines-between-class-members": [
+        "error",
+        "always",
         {
           exceptAfterSingleLine: true,
         },
       ],
-      '@stylistic/spaced-comment': [
-        'error',
-        'always',
+      "@stylistic/spaced-comment": [
+        "error",
+        "always",
         {
-          markers: ['/'],
+          markers: ["/"],
         },
       ],
-      'simple-import-sort/imports': 'error',
-      'simple-import-sort/exports': 'error',
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
     },
   },
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ["**/*.ts", "**/*.tsx"],
     plugins: {
       import: eslintPluginImport,
     },
     rules: {
-      '@typescript-eslint/explicit-function-return-type': 'error',
-      '@typescript-eslint/explicit-member-accessibility': [
-        'error',
-        { accessibility: 'no-public' },
+      "@typescript-eslint/explicit-function-return-type": "error",
+      "@typescript-eslint/explicit-member-accessibility": [
+        "error",
+        { accessibility: "no-public" },
       ],
-      '@typescript-eslint/member-ordering': [
-        'error',
+      "@typescript-eslint/member-ordering": [
+        "error",
         {
           default: [
-            'signature',
-            ['decorated-field', 'get', 'set'],
-            'field',
-            'constructor',
-            'decorated-method',
-            'method',
+            "signature",
+            ["decorated-field", "get", "set"],
+            "field",
+            "constructor",
+            "decorated-method",
+            "method",
           ],
         },
       ],
-      '@typescript-eslint/no-empty-function': 'error',
-      '@typescript-eslint/no-inferrable-types': [
-        'warn',
+      "@typescript-eslint/no-inferrable-types": [
+        "warn",
         { ignoreParameters: true },
       ],
-      '@typescript-eslint/no-invalid-this': 'error',
-      '@typescript-eslint/no-unused-expressions': [
-        'error',
+      "@typescript-eslint/no-unused-expressions": [
+        "error",
         { allowTernary: true },
       ],
-      '@typescript-eslint/no-unused-vars': [
-        'error',
+      "@typescript-eslint/no-unused-vars": [
+        "error",
         {
-          argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
         },
       ],
-      'import/no-absolute-path': 'error',
-      'import/no-cycle': 'error',
-      'import/no-self-import': 'error',
-      'import/no-useless-path-segments': 'error',
+      "import/no-absolute-path": "error",
+      "import/no-cycle": "error",
+      "import/no-self-import": "error",
+      "import/no-useless-path-segments": "error",
     },
     settings: {
-      'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx'] },
-      'import/resolver': {
+      "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
+      "import/resolver": {
         typescript: {
           alwaysTryTypes: true,
-          project: './tsconfig.base.json',
+          project: "./tsconfig.base.json",
         },
       },
     },
   },
-  ...nx.configs['flat/angular'],
-  ...nx.configs['flat/angular-template'],
+  ...nx.configs["flat/angular"],
+  ...nx.configs["flat/angular-template"],
   {
-    files: ['**/*.ts'],
+    files: ["**/*.ts"],
     rules: {
-      '@angular-eslint/directive-selector': [
-        'error',
+      "@angular-eslint/directive-selector": [
+        "error",
         {
-          type: 'attribute',
-          prefix: 'app',
-          style: 'camelCase',
+          type: "attribute",
+          prefix: "app",
+          style: "camelCase",
         },
       ],
-      '@angular-eslint/component-selector': [
-        'error',
+      "@angular-eslint/component-selector": [
+        "error",
         {
-          type: 'element',
-          prefix: 'app',
-          style: 'kebab-case',
+          type: "element",
+          prefix: "app",
+          style: "kebab-case",
         },
       ],
     },
   },
   {
-    files: ['**/*.html'],
+    files: ["**/*.html"],
     rules: {
-      '@angular-eslint/template/attributes-order': [
-        'warn',
+      "@angular-eslint/template/attributes-order": [
+        "warn",
         {
           alphabetical: true,
         },
       ],
-      '@angular-eslint/template/eqeqeq': [
-        'error',
+      "@angular-eslint/template/eqeqeq": [
+        "error",
         {
           allowNullOrUndefined: true,
         },
       ],
-      '@angular-eslint/template/prefer-self-closing-tags': ['warn'],
+      "@angular-eslint/template/prefer-self-closing-tags": ["warn"],
     },
   },
 ];
