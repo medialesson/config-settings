@@ -55,7 +55,18 @@ export default [
     plugins: {
       import: eslintPluginImport,
     },
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
     rules: {
+      "@typescript-eslint/consistent-type-assertions": [
+        "error",
+        {
+          assertionStyle: "never",
+        },
+      ],
       "@typescript-eslint/explicit-function-return-type": "error",
       "@typescript-eslint/explicit-member-accessibility": [
         "error",
@@ -78,6 +89,7 @@ export default [
         "warn",
         { ignoreParameters: true },
       ],
+      "@typescript-eslint/no-unsafe-member-access": ["error"],
       "@typescript-eslint/no-unused-expressions": [
         "error",
         { allowTernary: true },
@@ -97,10 +109,7 @@ export default [
     settings: {
       "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
       "import/resolver": {
-        typescript: {
-          alwaysTryTypes: true,
-          project: "./tsconfig.base.json",
-        },
+        typescript: true,
       },
     },
   },

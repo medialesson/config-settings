@@ -8,10 +8,25 @@ prevent common coding issues and promotes a uniform codebase.
 
 ## How to use
 
-If you don't have ESLint already installed (e.g. ESLint is included by default in all NX workspaces), you can install it
-in your Angular project by using the following command: `ng add @angular-eslint/schematics`.
+If you are working outside a Nx workspace (and you don't have ESLint already installed), you can install it in your
+Angular project by running: `ng add @angular-eslint/schematics`. Otherwise, ESLint is included by out of the box when
+generating a new Nx project.
 
-Once installed use one of our provided files as the base ESLint configuration by placing it in the root of your project
+### Dependencies
+
+Our recommended configuration contains the following dependencies:
+
+- [ESLint Stylistic](https://eslint.style/)
+- [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+- [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
+
+Which can be installed by using the command:
+
+`npm i -D @stylistic/eslint-plugin eslint-plugin-import eslint-plugin-simple-import-sort`
+
+### Copy configuration
+
+Use one of our provided files as the base ESLint configuration by placing it in the root of your project
 folder, as well as in the application / library folders when working in a monorepo setup.
 
 Note that two different formats are available:
