@@ -1,10 +1,13 @@
 # ESLint
 
 [ESLint](https://eslint.org) is a static code analysis tool used to identify and fix problems in JavaScript code. It
-helps maintain code quality and consistency by enforcing coding standards and best practices. In an Angular project,
-using ESLint ensures that the code adheres to a consistent style, catches potential errors early, and improves overall
-maintainability and readability. This is particularly important in large projects with multiple developers, as it helps
-prevent common coding issues and promotes a uniform codebase.
+helps maintain code quality and consistency by enforcing coding standards and best practices.
+
+Our recommended ESLint configuration includes strict rules designed to enforce a consistent coding style, catch
+potential errors early, and improve overall maintainability and readability. These benefits are particularly valuable in
+larger projects with multiple developers, as they help maintain a uniform codebase and prevent common coding issues.
+However, we understand that not all projects have the same requirements. Therefore, these rules can be modified,
+removed, or simplified to meet the specific needs of a project, especially if the project is small.
 
 ## How to use
 
@@ -40,15 +43,15 @@ Note that two different formats are available:
 Additionally, the repository includes separate ESLint configurations for projects following monorepo and standalone
 architectures.
 
-## Recommended rules
+## Extended rules
 
 The default Nx configurations from `@nx/eslint-plugin` are extended in all our standard ESLint configuration files.
-These duckdalready include the standard recommended rulesets from `eslint` and `@typescript-eslint`, so it is not
+These already include the standard recommended rulesets from `eslint` and `@typescript-eslint`, so it is not
 necessary to extend these rulesets separately.
 
 ## Overrides
 
-In addition to the standard rules, the following overrides are defined:
+In addition to the standard ones, the following rules are defined:
 
 _The autofix column indicates whether the rule can be automatically fixed by ESLint when running `eslint --fix`._
 
