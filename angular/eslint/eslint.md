@@ -3,11 +3,10 @@
 [ESLint](https://eslint.org) is a static code analysis tool used to identify and fix problems in JavaScript code. It
 helps maintain code quality and consistency by enforcing coding standards and best practices.
 
-Our recommended ESLint configuration includes strict rules designed to enforce a consistent coding style, catch
-potential errors early, and improve overall maintainability and readability. These benefits are particularly valuable in
-larger projects with multiple developers, as they help maintain a uniform codebase and prevent common coding issues.
-However, we understand that not all projects have the same requirements. Therefore, these rules can be modified,
-removed, or simplified to meet the specific needs of a project, especially if the project is small.
+Our recommended ESLint configuration includes strict rules designed to catch potential errors early and improve overall
+maintainability and readability. These benefits are particularly valuable in larger projects with multiple developers,
+as they help maintain a uniform codebase and prevent common coding issues. However, we understand that not all projects
+have the same requirements. Therefore, these rules can be modified, removed, or simplified to meet your specific needs.
 
 ## How to use
 
