@@ -42,6 +42,17 @@ Note that two different formats are available:
 Additionally, the repository includes separate ESLint configurations for projects following monorepo and standalone
 architectures.
 
+These variations result in 4 possible combinations, all of which are available in the following locations:
+
+- Flat + Monorepo
+  - [Root configuration](monorepo/eslint.config.js)
+  - [App or lib configuration](monorepo/angular-app-or-lib/eslint.config.js)
+- [Flat + Standalone](standalone/eslint.config.js)
+- eslintrc + Monorepo
+  - [Root configuration](standalone/.eslintrc.json)
+  - [App or lib configuration](monorepo/angular-app-or-lib/.eslintrc.json)
+- [eslintrc + Standalone](standalone/.eslintrc.json)
+
 ## Extended rules
 
 The default Nx configurations from `@nx/eslint-plugin` are extended in all our standard ESLint configuration files.
