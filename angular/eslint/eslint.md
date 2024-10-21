@@ -31,7 +31,7 @@ Which can be installed by using the command:
 Use one of our provided files as the base ESLint configuration by placing it in the root of your project
 folder, as well as in the application / library folders when working in a monorepo setup.
 
-Note that two different formats are available:
+Two different formats are available:
 
 - _Flat_: Newer format defined as `eslint.config.js` files. It is the standard style when working with Nx version 20+
   and ESLint 9+. It offers a streamlined configuration approach, making it easier to manage and understand.
@@ -52,6 +52,9 @@ These variations result in 4 possible combinations, all of which are available i
   - [Root configuration](standalone/.eslintrc.json)
   - [App or lib configuration](monorepo/angular-app-or-lib/.eslintrc.json)
 - [eslintrc + Standalone](standalone/.eslintrc.json)
+
+Note that all configurations are based on Nx workspaces. If you are not using Nx, you adjust the ESLint configuration
+files created during the installation steps by manually setting the extended rules and overrides.
 
 ## Extended rules
 
