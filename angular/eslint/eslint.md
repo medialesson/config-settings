@@ -20,11 +20,12 @@ Our recommended configuration contains the following dependencies:
 
 - [ESLint Stylistic](https://eslint.style/)
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+- [eslint-import-resolver-typescript](https://www.npmjs.com/package/eslint-import-resolver-typescript)
 - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
 
 Which can be installed by using the command:
 
-`npm i -D @stylistic/eslint-plugin eslint-plugin-import eslint-plugin-simple-import-sort`
+`npm i -D @stylistic/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript eslint-plugin-simple-import-sort`
 
 ### Copy configuration
 
