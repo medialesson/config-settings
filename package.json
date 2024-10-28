@@ -1,0 +1,9 @@
+{
+  "name": "config-settings",
+  "version": "1.0.0",
+  "description": "Medialesson Config Settings",
+  "author": "Medialesson GmbH",
+  "devDependencies": {
+    "prettier": "3.3.3"
+  }
+}
