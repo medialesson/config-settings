@@ -34,7 +34,7 @@ folder, as well as in the application / library folders when working in a monore
 
 Two different formats are available:
 
-- _Flat_: Newer format defined as `eslint.config.js` files. It is the standard style when working with Nx version 20+
+- _Flat_: Newer format defined as `eslint.config.cjs` files. It is the standard style when working with Nx version 20+
   and ESLint 9+. It offers a streamlined configuration approach, making it easier to manage and understand.
 
 - _eslintrc_: Codebases working on older versions of Nx and ESLint can instead rely on the legacy _eslintrc_ format,
@@ -46,9 +46,9 @@ architectures.
 These variations result in 4 possible combinations, all of which are available in the following locations:
 
 - Flat + Monorepo
-  - [Root configuration](monorepo/eslint.config.js)
-  - [App or lib configuration](monorepo/angular-app-or-lib/eslint.config.js)
-- [Flat + Standalone](standalone/eslint.config.js)
+  - [Root configuration](monorepo/eslint.config.cjs)
+  - [App or lib configuration](monorepo/angular-app-or-lib/eslint.config.cjs)
+- [Flat + Standalone](standalone/eslint.config.cjs)
 - eslintrc + Monorepo
   - [Root configuration](standalone/.eslintrc.json)
   - [App or lib configuration](monorepo/angular-app-or-lib/.eslintrc.json)
