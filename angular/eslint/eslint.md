@@ -46,7 +46,7 @@ architectures.
 These variations result in 4 possible combinations, all of which are available in the following locations:
 
 - Flat + Monorepo
-  - [Root configuration](monorepo/eslint.config.js)
+  - [Root configuration](monorepo/eslint.config.cjs)
   - [App or lib configuration](monorepo/angular-app-or-lib/eslint.config.js)
 - [Flat + Standalone](standalone/eslint.config.js)
 - eslintrc + Monorepo
