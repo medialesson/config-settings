@@ -1,9 +1,9 @@
-const nx = require('@nx/eslint-plugin');
-const stylistic = require('@stylistic/eslint-plugin');
-const eslintPluginImport = require('eslint-plugin-import');
-const simpleImportSort = require('eslint-plugin-simple-import-sort');
+import nx from '@nx/eslint-plugin';
+import stylistic from '@stylistic/eslint-plugin';
+import eslintPluginImport from 'eslint-plugin-import';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
-module.exports = [
+export default [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
@@ -11,25 +11,21 @@ module.exports = [
     ignores: ['**/dist'],
   },
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    files: [
+      '**/*.ts',
+      '**/*.tsx',
+      '**/*.cts',
+      '**/*.mts',
+      '**/*.js',
+      '**/*.jsx',
+      '**/*.cjs',
+      '**/*.mjs',
+    ],
     plugins: {
       'simple-import-sort': simpleImportSort,
       '@stylistic': stylistic,
     },
     rules: {
-      '@nx/enforce-module-boundaries': [
-        'error',
-        {
-          enforceBuildableLibDependency: true,
-          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
-          depConstraints: [
-            {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
-            },
-          ],
-        },
-      ],
       eqeqeq: ['error', 'smart'],
       'no-console': ['warn'],
       '@stylistic/lines-around-comment': [
@@ -64,7 +60,7 @@ module.exports = [
     },
   },
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
     plugins: {
       import: eslintPluginImport,
     },
@@ -126,6 +122,47 @@ module.exports = [
       'import/resolver': {
         typescript: true,
       },
+    },
+  },
+  ...nx.configs['flat/angular'],
+  ...nx.configs['flat/angular-template'],
+  {
+    files: ['**/*.ts'],
+    rules: {
+      '@angular-eslint/directive-selector': [
+        'error',
+        {
+          type: 'attribute',
+          prefix: 'app',
+          style: 'camelCase',
+        },
+      ],
+      '@angular-eslint/component-selector': [
+        'error',
+        {
+          type: 'element',
+          prefix: 'app',
+          style: 'kebab-case',
+        },
+      ],
+    },
+  },
+  {
+    files: ['**/*.html'],
+    rules: {
+      '@angular-eslint/template/attributes-order': [
+        'warn',
+        {
+          alphabetical: true,
+        },
+      ],
+      '@angular-eslint/template/eqeqeq': [
+        'error',
+        {
+          allowNullOrUndefined: true,
+        },
+      ],
+      '@angular-eslint/template/prefer-self-closing-tags': ['warn'],
     },
   },
 ];
